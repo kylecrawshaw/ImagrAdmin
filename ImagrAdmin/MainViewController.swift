@@ -182,7 +182,8 @@ class MainViewController: NSViewController {
     
     func updateConfig() {
         if passwordField.enabled && passwordField.stringValue != "" {
-            ImagrConfigManager.sharedManager.password = hashPassword(passwordField.stringValue)
+//            ImagrConfigManager.sharedManager.password = hashPassword(passwordField.stringValue)
+            ImagrConfigManager.sharedManager.password = passwordField.stringValue.sha512()
             passwordField.enabled = false
             changePasswordButton.enabled = true
             passwordField.stringValue = ""

@@ -134,24 +134,3 @@ public class ImagrConfigManager {
     }
     
 }
-
-
-func hashPassword(password: String) -> String {
-    let task = NSTask()
-    task.launchPath = "/usr/bin/python"
-    task.arguments = ["-c", "import hashlib; print hashlib.sha512(\"\(password)\").hexdigest()"]
-    
-    let stdOutput = NSPipe()
-    let outputHandler = stdOutput.fileHandleForReading
-    task.standardOutput = stdOutput
-    
-    task.launch()
-    
-    // Process the task stdout
-    let outputString = outputHandler.availableData
-    let stringRead = NSString(data: outputString, encoding: NSUTF8StringEncoding) as! String
-    let output = stringRead.stringByReplacingOccurrencesOfString(
-        "\n", withString: "", options: NSStringCompareOptions.LiteralSearch, range: nil)
-    
-    return output
-}
