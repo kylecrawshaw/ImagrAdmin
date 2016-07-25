@@ -1,0 +1,157 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<document type="com.apple.InterfaceBuilder3.Cocoa.XIB" version="3.0" toolsVersion="10117" systemVersion="15E65" targetRuntime="MacOSX.Cocoa" propertyAccessControl="none" useAutolayout="YES" customObjectInstantitationMethod="direct">
+    <dependencies>
+        <deployment identifier="macosx"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.CocoaPlugin" version="10117"/>
+    </dependencies>
+    <objects>
+        <customObject id="-2" userLabel="File's Owner" customClass="ScriptComponentViewController" customModule="ImagrManager" customModuleProvider="target">
+            <connections>
+                <outlet property="bottomView" destination="KEK-4u-y8W" id="DQP-GE-oxN"/>
+                <outlet property="contentView" destination="MjI-k5-KUM" id="yQi-Lh-6tU"/>
+                <outlet property="firstBootCheckbox" destination="Qid-W3-m2R" id="DWK-PI-wkd"/>
+                <outlet property="mainView" destination="amk-Gt-CE3" id="v8O-nd-Y0T"/>
+                <outlet property="manualRadioButton" destination="X5n-mv-8Q4" id="eWF-kn-Y2Y"/>
+                <outlet property="scriptContent" destination="f0D-YG-rQr" id="Y3l-EG-XXC"/>
+                <outlet property="scriptURLField" destination="6l2-Ww-dKT" id="Fgb-d1-3gz"/>
+                <outlet property="scriptURLView" destination="Kl8-C5-vJR" id="7PN-Py-CNL"/>
+                <outlet property="scriptView" destination="J0C-Ot-PNL" id="f6S-tB-8z5"/>
+                <outlet property="urlRadioButton" destination="bzZ-Wy-tjj" id="dx1-8z-nLe"/>
+                <outlet property="view" destination="amk-Gt-CE3" id="inT-Wp-c7I"/>
+            </connections>
+        </customObject>
+        <customObject id="-1" userLabel="First Responder" customClass="FirstResponder"/>
+        <customObject id="-3" userLabel="Application" customClass="NSObject"/>
+        <customView id="amk-Gt-CE3">
+            <rect key="frame" x="0.0" y="0.0" width="483" height="124"/>
+            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
+            <subviews>
+                <customView identifier="placeholder" ambiguous="YES" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="MjI-k5-KUM">
+                    <rect key="frame" x="0.0" y="60" width="483" height="8"/>
+                    <constraints>
+                        <constraint firstAttribute="width" constant="483" id="2ZX-m7-3rb"/>
+                        <constraint firstAttribute="height" constant="8" id="Rr8-gL-ogC"/>
+                    </constraints>
+                </customView>
+                <button fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="bzZ-Wy-tjj">
+                    <rect key="frame" x="37" y="87" width="82" height="18"/>
+                    <buttonCell key="cell" type="radio" title="From URL" bezelStyle="regularSquare" imagePosition="left" alignment="left" inset="2" id="eSD-7N-x4e">
+                        <behavior key="behavior" changeContents="YES" doesNotDimImage="YES" lightByContents="YES"/>
+                        <font key="font" metaFont="system"/>
+                    </buttonCell>
+                    <connections>
+                        <action selector="toggleScriptType:" target="-2" id="RF2-Hw-itX"/>
+                    </connections>
+                </button>
+                <button fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="X5n-mv-8Q4">
+                    <rect key="frame" x="124" y="87" width="66" height="18"/>
+                    <buttonCell key="cell" type="radio" title="Manual" bezelStyle="regularSquare" imagePosition="left" alignment="left" inset="2" id="63b-93-PBz">
+                        <behavior key="behavior" changeContents="YES" doesNotDimImage="YES" lightByContents="YES"/>
+                        <font key="font" metaFont="system"/>
+                    </buttonCell>
+                    <connections>
+                        <action selector="toggleScriptType:" target="-2" id="C3I-tk-hbi"/>
+                    </connections>
+                </button>
+                <customView ambiguous="YES" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="KEK-4u-y8W">
+                    <rect key="frame" x="0.0" y="0.0" width="483" height="47"/>
+                    <subviews>
+                        <button translatesAutoresizingMaskIntoConstraints="NO" id="Qid-W3-m2R">
+                            <rect key="frame" x="37" y="14" width="123" height="18"/>
+                            <buttonCell key="cell" type="check" title="Run at First Boot" bezelStyle="regularSquare" imagePosition="left" state="on" inset="2" id="9ee-3z-7gS">
+                                <behavior key="behavior" changeContents="YES" doesNotDimImage="YES" lightByContents="YES"/>
+                                <font key="font" metaFont="system"/>
+                            </buttonCell>
+                        </button>
+                        <button verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="6J0-pb-EXM">
+                            <rect key="frame" x="379" y="5" width="59" height="32"/>
+                            <buttonCell key="cell" type="push" title="OK" bezelStyle="rounded" alignment="center" borderStyle="border" imageScaling="proportionallyDown" inset="2" id="Zq4-u6-Ekb">
+                                <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
+                                <font key="font" metaFont="system"/>
+                                <string key="keyEquivalent" base64-UTF8="YES">
+DQ
+</string>
+                            </buttonCell>
+                            <connections>
+                                <action selector="okButtonClicked:" target="-2" id="ANh-uz-2ss"/>
+                            </connections>
+                        </button>
+                    </subviews>
+                    <constraints>
+                        <constraint firstAttribute="bottom" secondItem="Qid-W3-m2R" secondAttribute="bottom" constant="16" id="5ob-g0-nFZ"/>
+                        <constraint firstAttribute="width" constant="483" id="KYe-M8-soC"/>
+                        <constraint firstAttribute="trailing" secondItem="6J0-pb-EXM" secondAttribute="trailing" constant="51" id="gKJ-v1-iaH"/>
+                        <constraint firstItem="Qid-W3-m2R" firstAttribute="leading" secondItem="KEK-4u-y8W" secondAttribute="leading" constant="39" id="ml2-cy-7sR"/>
+                        <constraint firstAttribute="bottom" secondItem="6J0-pb-EXM" secondAttribute="bottom" constant="12" id="xoj-Kf-gz5"/>
+                    </constraints>
+                </customView>
+            </subviews>
+            <constraints>
+                <constraint firstItem="KEK-4u-y8W" firstAttribute="leading" secondItem="amk-Gt-CE3" secondAttribute="leading" id="G8p-7o-00G"/>
+                <constraint firstAttribute="bottom" secondItem="KEK-4u-y8W" secondAttribute="bottom" id="PSo-6U-Ou0"/>
+                <constraint firstAttribute="trailing" secondItem="KEK-4u-y8W" secondAttribute="trailing" id="QEq-aa-oYa"/>
+                <constraint firstAttribute="trailing" secondItem="MjI-k5-KUM" secondAttribute="trailing" id="ext-Ew-yoM"/>
+                <constraint firstItem="KEK-4u-y8W" firstAttribute="top" secondItem="MjI-k5-KUM" secondAttribute="bottom" constant="13" id="yjl-zi-qRt"/>
+            </constraints>
+            <point key="canvasLocation" x="549.5" y="60"/>
+        </customView>
+        <customView identifier="url" id="Kl8-C5-vJR">
+            <rect key="frame" x="0.0" y="0.0" width="483" height="69"/>
+            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
+            <subviews>
+                <textField identifier="url" verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="6l2-Ww-dKT">
+                    <rect key="frame" x="31" y="15" width="420" height="22"/>
+                    <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" selectable="YES" editable="YES" sendsActionOnEndEditing="YES" state="on" borderStyle="bezel" drawsBackground="YES" id="J2j-TK-89o">
+                        <font key="font" metaFont="system"/>
+                        <color key="textColor" name="textColor" catalog="System" colorSpace="catalog"/>
+                        <color key="backgroundColor" name="textBackgroundColor" catalog="System" colorSpace="catalog"/>
+                    </textFieldCell>
+                </textField>
+                <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="rRF-fI-dEA">
+                    <rect key="frame" x="29" y="45" width="73" height="17"/>
+                    <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" sendsActionOnEndEditing="YES" title="Script URL:" id="Vil-st-tEt">
+                        <font key="font" metaFont="system"/>
+                        <color key="textColor" name="labelColor" catalog="System" colorSpace="catalog"/>
+                        <color key="backgroundColor" name="controlColor" catalog="System" colorSpace="catalog"/>
+                    </textFieldCell>
+                </textField>
+            </subviews>
+            <point key="canvasLocation" x="549.5" y="501.5"/>
+        </customView>
+        <customView identifier="script" id="J0C-Ot-PNL">
+            <rect key="frame" x="0.0" y="0.0" width="483" height="315"/>
+            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
+            <subviews>
+                <scrollView fixedFrame="YES" horizontalLineScroll="10" horizontalPageScroll="10" verticalLineScroll="10" verticalPageScroll="10" hasHorizontalScroller="NO" usesPredominantAxisScrolling="NO" translatesAutoresizingMaskIntoConstraints="NO" id="0se-LU-48l">
+                    <rect key="frame" x="31" y="7" width="420" height="300"/>
+                    <clipView key="contentView" ambiguous="YES" id="leX-xD-Tj4">
+                        <rect key="frame" x="1" y="1" width="418" height="298"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <textView ambiguous="YES" importsGraphics="NO" findStyle="panel" continuousSpellChecking="YES" allowsUndo="YES" usesRuler="YES" usesFontPanel="YES" verticallyResizable="YES" allowsNonContiguousLayout="YES" quoteSubstitution="YES" dashSubstitution="YES" spellingCorrection="YES" smartInsertDelete="YES" id="f0D-YG-rQr">
+                                <rect key="frame" x="0.0" y="0.0" width="418" height="298"/>
+                                <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <size key="minSize" width="418" height="298"/>
+                                <size key="maxSize" width="463" height="10000000"/>
+                                <color key="insertionPointColor" name="controlTextColor" catalog="System" colorSpace="catalog"/>
+                                <size key="minSize" width="418" height="298"/>
+                                <size key="maxSize" width="463" height="10000000"/>
+                            </textView>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    </clipView>
+                    <scroller key="horizontalScroller" hidden="YES" verticalHuggingPriority="750" doubleValue="1" horizontal="YES" id="I9k-5M-IyU">
+                        <rect key="frame" x="-100" y="-100" width="87" height="18"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </scroller>
+                    <scroller key="verticalScroller" verticalHuggingPriority="750" horizontal="NO" id="mdK-of-NW5">
+                        <rect key="frame" x="403" y="1" width="16" height="298"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </scroller>
+                </scrollView>
+            </subviews>
+            <point key="canvasLocation" x="549.5" y="294.5"/>
+        </customView>
+    </objects>
+</document>

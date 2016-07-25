@@ -1,0 +1,464 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		6C8AD1BB1D463771004603A0 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 6C8AD1BA1D463771004603A0 /* Assets.xcassets */; };
+		6C8AD1F01D463879004603A0 /* ImagrWorkflowManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6C8AD1C91D463879004603A0 /* ImagrWorkflowManager.swift */; };
+		6C8AD1F11D463879004603A0 /* BaseComponent.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6C8AD1CB1D463879004603A0 /* BaseComponent.swift */; };
+		6C8AD1F21D463879004603A0 /* BaseComponentViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6C8AD1CC1D463879004603A0 /* BaseComponentViewController.swift */; };
+		6C8AD1F31D463879004603A0 /* ComputerNameComponent.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6C8AD1CE1D463879004603A0 /* ComputerNameComponent.swift */; };
+		6C8AD1F41D463879004603A0 /* ComputerNameViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6C8AD1CF1D463879004603A0 /* ComputerNameViewController.swift */; };
+		6C8AD1F51D463879004603A0 /* ComputerNameViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 6C8AD1D01D463879004603A0 /* ComputerNameViewController.xib */; };
+		6C8AD1F61D463879004603A0 /* EraseVolumeComponent.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6C8AD1D21D463879004603A0 /* EraseVolumeComponent.swift */; };
+		6C8AD1F71D463879004603A0 /* EraseVolumeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6C8AD1D31D463879004603A0 /* EraseVolumeViewController.swift */; };
+		6C8AD1F81D463879004603A0 /* EraseVolumeViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 6C8AD1D41D463879004603A0 /* EraseVolumeViewController.xib */; };
+		6C8AD1F91D463879004603A0 /* ImageComponent.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6C8AD1D61D463879004603A0 /* ImageComponent.swift */; };
+		6C8AD1FA1D463879004603A0 /* ImageComponentViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6C8AD1D71D463879004603A0 /* ImageComponentViewController.swift */; };
+		6C8AD1FB1D463879004603A0 /* ImageComponentViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 6C8AD1D81D463879004603A0 /* ImageComponentViewController.xib */; };
+		6C8AD1FC1D463879004603A0 /* IncludedWorkflowComponent.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6C8AD1DA1D463879004603A0 /* IncludedWorkflowComponent.swift */; };
+		6C8AD1FD1D463879004603A0 /* IncludedWorkflowViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6C8AD1DB1D463879004603A0 /* IncludedWorkflowViewController.swift */; };
+		6C8AD1FE1D463879004603A0 /* IncludedWorkflowViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 6C8AD1DC1D463879004603A0 /* IncludedWorkflowViewController.xib */; };
+		6C8AD1FF1D463879004603A0 /* LocalizationComponent.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6C8AD1DE1D463879004603A0 /* LocalizationComponent.swift */; };
+		6C8AD2001D463879004603A0 /* LocalizationComponentViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6C8AD1DF1D463879004603A0 /* LocalizationComponentViewController.swift */; };
+		6C8AD2011D463879004603A0 /* LocalizationComponentViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 6C8AD1E01D463879004603A0 /* LocalizationComponentViewController.xib */; };
+		6C8AD2021D463879004603A0 /* LocalizationManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6C8AD1E11D463879004603A0 /* LocalizationManager.swift */; };
+		6C8AD2031D463879004603A0 /* PackageComponent.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6C8AD1E31D463879004603A0 /* PackageComponent.swift */; };
+		6C8AD2041D463879004603A0 /* PackageComponentViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6C8AD1E41D463879004603A0 /* PackageComponentViewController.swift */; };
+		6C8AD2051D463879004603A0 /* PackageComponentViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 6C8AD1E51D463879004603A0 /* PackageComponentViewController.xib */; };
+		6C8AD2091D463879004603A0 /* RegisteredComponents.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6C8AD1E91D463879004603A0 /* RegisteredComponents.swift */; };
+		6C8AD20D1D463879004603A0 /* WorkflowViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6C8AD1EE1D463879004603A0 /* WorkflowViewController.swift */; };
+		6C8AD20E1D463879004603A0 /* WorkflowViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 6C8AD1EF1D463879004603A0 /* WorkflowViewController.xib */; };
+		6C8AD2101D463886004603A0 /* MainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6C8AD20F1D463886004603A0 /* MainViewController.swift */; };
+		6C8AD2121D463895004603A0 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6C8AD2111D463895004603A0 /* AppDelegate.swift */; };
+		6C8AD21E1D463ADE004603A0 /* ScriptComponent.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6C8AD21B1D463ADE004603A0 /* ScriptComponent.swift */; };
+		6C8AD21F1D463ADE004603A0 /* ScriptComponentViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6C8AD21C1D463ADE004603A0 /* ScriptComponentViewController.swift */; };
+		6C8AD2201D463ADE004603A0 /* ScriptComponentViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 6C8AD21D1D463ADE004603A0 /* ScriptComponentViewController.xib */; };
+		6C8AD2221D463AF8004603A0 /* ImagrConfigManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6C8AD2211D463AF8004603A0 /* ImagrConfigManager.swift */; };
+		6C8AD2241D463D1C004603A0 /* MainMenu.xib in Resources */ = {isa = PBXBuildFile; fileRef = 6C8AD2231D463D1C004603A0 /* MainMenu.xib */; };
+		6C8AD2261D463DA5004603A0 /* validateplist.py in Resources */ = {isa = PBXBuildFile; fileRef = 6C8AD2251D463DA5004603A0 /* validateplist.py */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXFileReference section */
+		6C8AD1B51D463771004603A0 /* ImagrAdmin.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ImagrAdmin.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		6C8AD1BA1D463771004603A0 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		6C8AD1BF1D463771004603A0 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		6C8AD1C91D463879004603A0 /* ImagrWorkflowManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ImagrWorkflowManager.swift; sourceTree = "<group>"; };
+		6C8AD1CB1D463879004603A0 /* BaseComponent.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BaseComponent.swift; sourceTree = "<group>"; };
+		6C8AD1CC1D463879004603A0 /* BaseComponentViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BaseComponentViewController.swift; sourceTree = "<group>"; };
+		6C8AD1CE1D463879004603A0 /* ComputerNameComponent.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ComputerNameComponent.swift; sourceTree = "<group>"; };
+		6C8AD1CF1D463879004603A0 /* ComputerNameViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ComputerNameViewController.swift; sourceTree = "<group>"; };
+		6C8AD1D01D463879004603A0 /* ComputerNameViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ComputerNameViewController.xib; sourceTree = "<group>"; };
+		6C8AD1D21D463879004603A0 /* EraseVolumeComponent.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EraseVolumeComponent.swift; sourceTree = "<group>"; };
+		6C8AD1D31D463879004603A0 /* EraseVolumeViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EraseVolumeViewController.swift; sourceTree = "<group>"; };
+		6C8AD1D41D463879004603A0 /* EraseVolumeViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = EraseVolumeViewController.xib; sourceTree = "<group>"; };
+		6C8AD1D61D463879004603A0 /* ImageComponent.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ImageComponent.swift; sourceTree = "<group>"; };
+		6C8AD1D71D463879004603A0 /* ImageComponentViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ImageComponentViewController.swift; sourceTree = "<group>"; };
+		6C8AD1D81D463879004603A0 /* ImageComponentViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ImageComponentViewController.xib; sourceTree = "<group>"; };
+		6C8AD1DA1D463879004603A0 /* IncludedWorkflowComponent.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = IncludedWorkflowComponent.swift; sourceTree = "<group>"; };
+		6C8AD1DB1D463879004603A0 /* IncludedWorkflowViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = IncludedWorkflowViewController.swift; sourceTree = "<group>"; };
+		6C8AD1DC1D463879004603A0 /* IncludedWorkflowViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = IncludedWorkflowViewController.xib; sourceTree = "<group>"; };
+		6C8AD1DE1D463879004603A0 /* LocalizationComponent.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LocalizationComponent.swift; sourceTree = "<group>"; };
+		6C8AD1DF1D463879004603A0 /* LocalizationComponentViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LocalizationComponentViewController.swift; sourceTree = "<group>"; };
+		6C8AD1E01D463879004603A0 /* LocalizationComponentViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = LocalizationComponentViewController.xib; sourceTree = "<group>"; };
+		6C8AD1E11D463879004603A0 /* LocalizationManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LocalizationManager.swift; sourceTree = "<group>"; };
+		6C8AD1E31D463879004603A0 /* PackageComponent.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PackageComponent.swift; sourceTree = "<group>"; };
+		6C8AD1E41D463879004603A0 /* PackageComponentViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PackageComponentViewController.swift; sourceTree = "<group>"; };
+		6C8AD1E51D463879004603A0 /* PackageComponentViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = PackageComponentViewController.xib; sourceTree = "<group>"; };
+		6C8AD1E91D463879004603A0 /* RegisteredComponents.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RegisteredComponents.swift; sourceTree = "<group>"; };
+		6C8AD1EE1D463879004603A0 /* WorkflowViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WorkflowViewController.swift; sourceTree = "<group>"; };
+		6C8AD1EF1D463879004603A0 /* WorkflowViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = WorkflowViewController.xib; sourceTree = "<group>"; };
+		6C8AD20F1D463886004603A0 /* MainViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MainViewController.swift; sourceTree = "<group>"; };
+		6C8AD2111D463895004603A0 /* AppDelegate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
+		6C8AD21B1D463ADE004603A0 /* ScriptComponent.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ScriptComponent.swift; sourceTree = "<group>"; };
+		6C8AD21C1D463ADE004603A0 /* ScriptComponentViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ScriptComponentViewController.swift; sourceTree = "<group>"; };
+		6C8AD21D1D463ADE004603A0 /* ScriptComponentViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ScriptComponentViewController.xib; sourceTree = "<group>"; };
+		6C8AD2211D463AF8004603A0 /* ImagrConfigManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ImagrConfigManager.swift; sourceTree = "<group>"; };
+		6C8AD2231D463D1C004603A0 /* MainMenu.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = MainMenu.xib; sourceTree = "<group>"; };
+		6C8AD2251D463DA5004603A0 /* validateplist.py */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.script.python; path = validateplist.py; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		6C8AD1B21D463771004603A0 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		6C8AD1AC1D463771004603A0 = {
+			isa = PBXGroup;
+			children = (
+				6C8AD1B71D463771004603A0 /* ImagrAdmin */,
+				6C8AD1B61D463771004603A0 /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		6C8AD1B61D463771004603A0 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				6C8AD1B51D463771004603A0 /* ImagrAdmin.app */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		6C8AD1B71D463771004603A0 /* ImagrAdmin */ = {
+			isa = PBXGroup;
+			children = (
+				6C8AD2111D463895004603A0 /* AppDelegate.swift */,
+				6C8AD1BA1D463771004603A0 /* Assets.xcassets */,
+				6C8AD2231D463D1C004603A0 /* MainMenu.xib */,
+				6C8AD1BF1D463771004603A0 /* Info.plist */,
+				6C8AD20F1D463886004603A0 /* MainViewController.swift */,
+				6C8AD2251D463DA5004603A0 /* validateplist.py */,
+				6C8AD2211D463AF8004603A0 /* ImagrConfigManager.swift */,
+				6C8AD1C81D463879004603A0 /* WorkflowSupport */,
+			);
+			path = ImagrAdmin;
+			sourceTree = "<group>";
+		};
+		6C8AD1C81D463879004603A0 /* WorkflowSupport */ = {
+			isa = PBXGroup;
+			children = (
+				6C8AD1C91D463879004603A0 /* ImagrWorkflowManager.swift */,
+				6C8AD1CA1D463879004603A0 /* WorkflowComponents */,
+				6C8AD1EE1D463879004603A0 /* WorkflowViewController.swift */,
+				6C8AD1EF1D463879004603A0 /* WorkflowViewController.xib */,
+			);
+			path = WorkflowSupport;
+			sourceTree = "<group>";
+		};
+		6C8AD1CA1D463879004603A0 /* WorkflowComponents */ = {
+			isa = PBXGroup;
+			children = (
+				6C8AD1CB1D463879004603A0 /* BaseComponent.swift */,
+				6C8AD1CC1D463879004603A0 /* BaseComponentViewController.swift */,
+				6C8AD21A1D463ADE004603A0 /* ScriptComponent */,
+				6C8AD1CD1D463879004603A0 /* ComputerNameComponent */,
+				6C8AD1D11D463879004603A0 /* EraseVolumeComponent */,
+				6C8AD1D51D463879004603A0 /* ImageComponent */,
+				6C8AD1D91D463879004603A0 /* IncludedWorkflowComponent */,
+				6C8AD1DD1D463879004603A0 /* LocalizationComponent */,
+				6C8AD1E21D463879004603A0 /* PackageComponent */,
+				6C8AD1E91D463879004603A0 /* RegisteredComponents.swift */,
+			);
+			path = WorkflowComponents;
+			sourceTree = "<group>";
+		};
+		6C8AD1CD1D463879004603A0 /* ComputerNameComponent */ = {
+			isa = PBXGroup;
+			children = (
+				6C8AD1CE1D463879004603A0 /* ComputerNameComponent.swift */,
+				6C8AD1CF1D463879004603A0 /* ComputerNameViewController.swift */,
+				6C8AD1D01D463879004603A0 /* ComputerNameViewController.xib */,
+			);
+			path = ComputerNameComponent;
+			sourceTree = "<group>";
+		};
+		6C8AD1D11D463879004603A0 /* EraseVolumeComponent */ = {
+			isa = PBXGroup;
+			children = (
+				6C8AD1D21D463879004603A0 /* EraseVolumeComponent.swift */,
+				6C8AD1D31D463879004603A0 /* EraseVolumeViewController.swift */,
+				6C8AD1D41D463879004603A0 /* EraseVolumeViewController.xib */,
+			);
+			path = EraseVolumeComponent;
+			sourceTree = "<group>";
+		};
+		6C8AD1D51D463879004603A0 /* ImageComponent */ = {
+			isa = PBXGroup;
+			children = (
+				6C8AD1D61D463879004603A0 /* ImageComponent.swift */,
+				6C8AD1D71D463879004603A0 /* ImageComponentViewController.swift */,
+				6C8AD1D81D463879004603A0 /* ImageComponentViewController.xib */,
+			);
+			path = ImageComponent;
+			sourceTree = "<group>";
+		};
+		6C8AD1D91D463879004603A0 /* IncludedWorkflowComponent */ = {
+			isa = PBXGroup;
+			children = (
+				6C8AD1DA1D463879004603A0 /* IncludedWorkflowComponent.swift */,
+				6C8AD1DB1D463879004603A0 /* IncludedWorkflowViewController.swift */,
+				6C8AD1DC1D463879004603A0 /* IncludedWorkflowViewController.xib */,
+			);
+			path = IncludedWorkflowComponent;
+			sourceTree = "<group>";
+		};
+		6C8AD1DD1D463879004603A0 /* LocalizationComponent */ = {
+			isa = PBXGroup;
+			children = (
+				6C8AD1DE1D463879004603A0 /* LocalizationComponent.swift */,
+				6C8AD1DF1D463879004603A0 /* LocalizationComponentViewController.swift */,
+				6C8AD1E01D463879004603A0 /* LocalizationComponentViewController.xib */,
+				6C8AD1E11D463879004603A0 /* LocalizationManager.swift */,
+			);
+			path = LocalizationComponent;
+			sourceTree = "<group>";
+		};
+		6C8AD1E21D463879004603A0 /* PackageComponent */ = {
+			isa = PBXGroup;
+			children = (
+				6C8AD1E31D463879004603A0 /* PackageComponent.swift */,
+				6C8AD1E41D463879004603A0 /* PackageComponentViewController.swift */,
+				6C8AD1E51D463879004603A0 /* PackageComponentViewController.xib */,
+			);
+			path = PackageComponent;
+			sourceTree = "<group>";
+		};
+		6C8AD21A1D463ADE004603A0 /* ScriptComponent */ = {
+			isa = PBXGroup;
+			children = (
+				6C8AD21B1D463ADE004603A0 /* ScriptComponent.swift */,
+				6C8AD21C1D463ADE004603A0 /* ScriptComponentViewController.swift */,
+				6C8AD21D1D463ADE004603A0 /* ScriptComponentViewController.xib */,
+			);
+			path = ScriptComponent;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		6C8AD1B41D463771004603A0 /* ImagrAdmin */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 6C8AD1C21D463771004603A0 /* Build configuration list for PBXNativeTarget "ImagrAdmin" */;
+			buildPhases = (
+				6C8AD1B11D463771004603A0 /* Sources */,
+				6C8AD1B21D463771004603A0 /* Frameworks */,
+				6C8AD1B31D463771004603A0 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = ImagrAdmin;
+			productName = ImagrAdmin;
+			productReference = 6C8AD1B51D463771004603A0 /* ImagrAdmin.app */;
+			productType = "com.apple.product-type.application";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		6C8AD1AD1D463771004603A0 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastSwiftUpdateCheck = 0730;
+				LastUpgradeCheck = 0730;
+				ORGANIZATIONNAME = "Kyle Crawshaw";
+				TargetAttributes = {
+					6C8AD1B41D463771004603A0 = {
+						CreatedOnToolsVersion = 7.3.1;
+					};
+				};
+			};
+			buildConfigurationList = 6C8AD1B01D463771004603A0 /* Build configuration list for PBXProject "ImagrAdmin" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = 6C8AD1AC1D463771004603A0;
+			productRefGroup = 6C8AD1B61D463771004603A0 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				6C8AD1B41D463771004603A0 /* ImagrAdmin */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		6C8AD1B31D463771004603A0 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				6C8AD1BB1D463771004603A0 /* Assets.xcassets in Resources */,
+				6C8AD2261D463DA5004603A0 /* validateplist.py in Resources */,
+				6C8AD1F81D463879004603A0 /* EraseVolumeViewController.xib in Resources */,
+				6C8AD2201D463ADE004603A0 /* ScriptComponentViewController.xib in Resources */,
+				6C8AD2241D463D1C004603A0 /* MainMenu.xib in Resources */,
+				6C8AD2011D463879004603A0 /* LocalizationComponentViewController.xib in Resources */,
+				6C8AD1F51D463879004603A0 /* ComputerNameViewController.xib in Resources */,
+				6C8AD2051D463879004603A0 /* PackageComponentViewController.xib in Resources */,
+				6C8AD1FB1D463879004603A0 /* ImageComponentViewController.xib in Resources */,
+				6C8AD20E1D463879004603A0 /* WorkflowViewController.xib in Resources */,
+				6C8AD1FE1D463879004603A0 /* IncludedWorkflowViewController.xib in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		6C8AD1B11D463771004603A0 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				6C8AD2031D463879004603A0 /* PackageComponent.swift in Sources */,
+				6C8AD2091D463879004603A0 /* RegisteredComponents.swift in Sources */,
+				6C8AD1FF1D463879004603A0 /* LocalizationComponent.swift in Sources */,
+				6C8AD1F91D463879004603A0 /* ImageComponent.swift in Sources */,
+				6C8AD2221D463AF8004603A0 /* ImagrConfigManager.swift in Sources */,
+				6C8AD1F41D463879004603A0 /* ComputerNameViewController.swift in Sources */,
+				6C8AD1F71D463879004603A0 /* EraseVolumeViewController.swift in Sources */,
+				6C8AD1F11D463879004603A0 /* BaseComponent.swift in Sources */,
+				6C8AD20D1D463879004603A0 /* WorkflowViewController.swift in Sources */,
+				6C8AD21E1D463ADE004603A0 /* ScriptComponent.swift in Sources */,
+				6C8AD1F31D463879004603A0 /* ComputerNameComponent.swift in Sources */,
+				6C8AD1F61D463879004603A0 /* EraseVolumeComponent.swift in Sources */,
+				6C8AD2121D463895004603A0 /* AppDelegate.swift in Sources */,
+				6C8AD2041D463879004603A0 /* PackageComponentViewController.swift in Sources */,
+				6C8AD1FC1D463879004603A0 /* IncludedWorkflowComponent.swift in Sources */,
+				6C8AD2101D463886004603A0 /* MainViewController.swift in Sources */,
+				6C8AD2001D463879004603A0 /* LocalizationComponentViewController.swift in Sources */,
+				6C8AD2021D463879004603A0 /* LocalizationManager.swift in Sources */,
+				6C8AD1F01D463879004603A0 /* ImagrWorkflowManager.swift in Sources */,
+				6C8AD1FD1D463879004603A0 /* IncludedWorkflowViewController.swift in Sources */,
+				6C8AD1FA1D463879004603A0 /* ImageComponentViewController.swift in Sources */,
+				6C8AD1F21D463879004603A0 /* BaseComponentViewController.swift in Sources */,
+				6C8AD21F1D463ADE004603A0 /* ScriptComponentViewController.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin XCBuildConfiguration section */
+		6C8AD1C01D463771004603A0 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				CODE_SIGN_IDENTITY = "-";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				MACOSX_DEPLOYMENT_TARGET = 10.11;
+				MTL_ENABLE_DEBUG_INFO = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = macosx;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+			};
+			name = Debug;
+		};
+		6C8AD1C11D463771004603A0 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				CODE_SIGN_IDENTITY = "-";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				MACOSX_DEPLOYMENT_TARGET = 10.11;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				SDKROOT = macosx;
+			};
+			name = Release;
+		};
+		6C8AD1C31D463771004603A0 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				COMBINE_HIDPI_IMAGES = YES;
+				INFOPLIST_FILE = ImagrAdmin/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.kylecrawshaw.ImagrAdmin;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Debug;
+		};
+		6C8AD1C41D463771004603A0 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				COMBINE_HIDPI_IMAGES = YES;
+				INFOPLIST_FILE = ImagrAdmin/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.kylecrawshaw.ImagrAdmin;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		6C8AD1B01D463771004603A0 /* Build configuration list for PBXProject "ImagrAdmin" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				6C8AD1C01D463771004603A0 /* Debug */,
+				6C8AD1C11D463771004603A0 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		6C8AD1C21D463771004603A0 /* Build configuration list for PBXNativeTarget "ImagrAdmin" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				6C8AD1C31D463771004603A0 /* Debug */,
+				6C8AD1C41D463771004603A0 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = 6C8AD1AD1D463771004603A0 /* Project object */;
+}
