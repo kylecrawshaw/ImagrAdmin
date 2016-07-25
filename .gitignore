@@ -1,4 +1,4 @@
 .DS_Store
 *.xcuserdatad
 build
-ImagrAdmin.xcodeproj/project.xcworkspace/xcuserdata/
+ImagrAdmin.xcodeproj/project.xcworkspace/xcuserdata/*
