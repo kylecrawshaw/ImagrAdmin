@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		6C493C271D46C87800D04905 /* Crypto.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6C493C261D46C87800D04905 /* Crypto.swift */; };
 		6C8AD1BB1D463771004603A0 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 6C8AD1BA1D463771004603A0 /* Assets.xcassets */; };
 		6C8AD1F01D463879004603A0 /* ImagrWorkflowManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6C8AD1C91D463879004603A0 /* ImagrWorkflowManager.swift */; };
 		6C8AD1F11D463879004603A0 /* BaseComponent.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6C8AD1CB1D463879004603A0 /* BaseComponent.swift */; };
@@ -44,6 +45,8 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		6C493C261D46C87800D04905 /* Crypto.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Crypto.swift; sourceTree = "<group>"; };
+		6C493C281D46C89F00D04905 /* ImagrAdmin-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "ImagrAdmin-Bridging-Header.h"; sourceTree = "<group>"; };
 		6C8AD1B51D463771004603A0 /* ImagrAdmin.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ImagrAdmin.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		6C8AD1BA1D463771004603A0 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		6C8AD1BF1D463771004603A0 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -120,6 +123,8 @@
 				6C8AD2251D463DA5004603A0 /* validateplist.py */,
 				6C8AD2211D463AF8004603A0 /* ImagrConfigManager.swift */,
 				6C8AD1C81D463879004603A0 /* WorkflowSupport */,
+				6C493C261D46C87800D04905 /* Crypto.swift */,
+				6C493C281D46C89F00D04905 /* ImagrAdmin-Bridging-Header.h */,
 			);
 			path = ImagrAdmin;
 			sourceTree = "<group>";
@@ -302,6 +307,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				6C493C271D46C87800D04905 /* Crypto.swift in Sources */,
 				6C8AD2031D463879004603A0 /* PackageComponent.swift in Sources */,
 				6C8AD2091D463879004603A0 /* RegisteredComponents.swift in Sources */,
 				6C8AD1FF1D463879004603A0 /* LocalizationComponent.swift in Sources */,
@@ -422,6 +428,7 @@
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.kylecrawshaw.ImagrAdmin;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OBJC_BRIDGING_HEADER = "ImagrAdmin/ImagrAdmin-Bridging-Header.h";
 			};
 			name = Debug;
 		};
@@ -434,6 +441,7 @@
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.kylecrawshaw.ImagrAdmin;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OBJC_BRIDGING_HEADER = "ImagrAdmin/ImagrAdmin-Bridging-Header.h";
 			};
 			name = Release;
 		};
