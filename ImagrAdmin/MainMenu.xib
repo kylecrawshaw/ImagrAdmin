@@ -1114,7 +1114,7 @@ DQ
                 <constraint firstAttribute="bottom" secondItem="5x6-2k-Gi6" secondAttribute="bottom" constant="77" id="hIx-r3-sJY"/>
                 <constraint firstAttribute="bottom" secondItem="btt-VO-uEm" secondAttribute="bottom" constant="30" id="vcu-mM-8no"/>
             </constraints>
-            <point key="canvasLocation" x="487.5" y="223.5"/>
+            <point key="canvasLocation" x="520.5" y="216.5"/>
         </customView>
     </objects>
     <resources>

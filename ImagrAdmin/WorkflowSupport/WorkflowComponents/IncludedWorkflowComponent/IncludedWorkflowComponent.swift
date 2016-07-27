@@ -16,14 +16,13 @@ class IncludedWorkflowComponent: BaseComponent {
     init(id: Int!, workflowName: String!, workflowId: Int!) {
         super.init(id: id, type: "included_workflow", workflowName: workflowName, workflowId: workflowId)
         super.componentViewController = IncludedWorkflowViewController()
-        self.includedWorkflow = ""
     }
     
     init(id: Int!, workflowName: String!, workflowId: Int!, dict: NSDictionary!) {
         super.init(id: id, type: "included_workflow", workflowName: workflowName, workflowId: workflowId)
         super.componentViewController = IncludedWorkflowViewController()
-        self.includedWorkflow = dict.valueForKey("included_workflow") as? String ?? ""
-        self.script = dict.valueForKey("script") as? String ?? ""
+        self.includedWorkflow = dict.valueForKey("included_workflow") as? String
+        self.script = dict.valueForKey("script") as? String
     }
     
     override func asDict() -> NSDictionary? {
