@@ -25,13 +25,14 @@ class MainViewController: NSViewController {
     @IBOutlet weak var validateSpinner: NSProgressIndicator!
     @IBOutlet weak var validateOkButton: NSButton!
     @IBOutlet weak var validateView: NSView!
-    
+    @IBOutlet weak var skipValidateButton: NSButton!
     
     let openPanel: NSOpenPanel = NSOpenPanel()
     private var task: NSTask?
     
     private var selectedConfigPath: String!
-    private var validationOutput: String!
+//    private var validationOutput: String!
+//    private var validationOutput: NSMutableAttributedString?
     
     override func viewDidAppear() {
         super.viewDidAppear()
@@ -182,7 +183,6 @@ class MainViewController: NSViewController {
     
     func updateConfig() {
         if passwordField.enabled && passwordField.stringValue != "" {
-//            ImagrConfigManager.sharedManager.password = hashPassword(passwordField.stringValue)
             ImagrConfigManager.sharedManager.password = passwordField.stringValue.sha512()
             passwordField.enabled = false
             changePasswordButton.enabled = true
@@ -224,25 +224,7 @@ class MainViewController: NSViewController {
 
 
     @IBAction func validateOkClicked(sender: AnyObject) {
-//        if validationOutput.rangeOfString("SUCCESS: ") != nil {
-//            if NSFileManager.defaultManager().fileExistsAtPath(ImagrConfigManager.sharedManager.imagrConfigPath!) {
-//            
-////                let imagrPassword = ImagrConfigManager.sharedManager.password
-////                if imagrPassword != nil {
-////                    passwordField.placeholderString = "Hashed password is already set"
-////                    passwordField.enabled = false
-////                    changePasswordButton.hidden = false
-////                }
-//            } else {
-//                saveConfig()
-//            }
-//        } else {
-//            if ImagrConfigManager.sharedManager.imagrConfigPath == nil {
-//                NSApplication.sharedApplication().terminate(self)
-//            }
-//        }
         mainWindow.contentView = mainView
-        validationOutput = nil
     }
 
 
@@ -264,15 +246,17 @@ class MainViewController: NSViewController {
             notification -> Void in
             let data = outHandle.availableData
             if data.length > 0 {
-                if let str = NSString(data: data, encoding: NSUTF8StringEncoding) {
-                    self.validationOutput = self.validationOutput.stringByAppendingString(str as String)
+                if let str = NSString(data: data, encoding: NSUTF8StringEncoding) as? String {
+                    let lines = str.componentsSeparatedByString("\n")
+                    
+                    for line in lines {
+                        self.validateTextField.textStorage?.appendAttributedString(formatMessageString(line))
+                    }
                 }
                 outHandle.waitForDataInBackgroundAndNotify()
             } else {
                 NSNotificationCenter.defaultCenter().removeObserver(obs1)
             }
-            self.validationOutput = self.validationOutput.stringByReplacingOccurrencesOfString("                                ", withString: "\n")
-            self.validateTextField.string = self.validationOutput
         }
         
         var obs2 : NSObjectProtocol!
@@ -282,6 +266,7 @@ class MainViewController: NSViewController {
             self.validateSpinner.stopAnimation(self)
             self.validateSpinner.hidden = true
             self.validateOkButton.enabled = true
+            self.skipValidateButton.enabled = false
             NSNotificationCenter.defaultCenter().removeObserver(obs2)
             self.task = nil
         }
@@ -289,12 +274,11 @@ class MainViewController: NSViewController {
         validateSpinner.startAnimation(self)
         validateSpinner.hidden = false
         validateOkButton.enabled = false
-        if self.validationOutput == nil {
-            self.validationOutput = "Running validateplist...\n\n"
-        }
-        self.validateTextField.string = self.validationOutput
+        skipValidateButton.enabled = true
         let popTime = dispatch_time(DISPATCH_TIME_NOW, Int64(0.5 * Double(NSEC_PER_SEC)))
         dispatch_after(popTime, dispatch_get_main_queue()) {
+            let startOutput = NSAttributedString(string: "Running validateplist...\n\n", attributes: [NSForegroundColorAttributeName: NSColor.blackColor()])
+            self.validateTextField.textStorage?.appendAttributedString(startOutput)
             self.task!.launch()
         }
     }

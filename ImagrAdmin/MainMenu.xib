@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.Cocoa.XIB" version="3.0" toolsVersion="10117" systemVersion="15G31" targetRuntime="MacOSX.Cocoa" propertyAccessControl="none" useAutolayout="YES" customObjectInstantitationMethod="direct">
+<document type="com.apple.InterfaceBuilder3.Cocoa.XIB" version="3.0" toolsVersion="10117" systemVersion="15E65" targetRuntime="MacOSX.Cocoa" propertyAccessControl="none" useAutolayout="YES" customObjectInstantitationMethod="direct">
     <dependencies>
         <deployment identifier="macosx"/>
         <plugIn identifier="com.apple.InterfaceBuilder.CocoaPlugin" version="10117"/>
@@ -28,6 +28,7 @@
                 <outlet property="mainView" destination="EiT-Mj-1SZ" id="TGv-et-2WS"/>
                 <outlet property="mainWindow" destination="QvC-M9-y7g" id="TZf-px-RdH"/>
                 <outlet property="passwordField" destination="j3f-5P-sub" id="XZc-Au-pIw"/>
+                <outlet property="skipValidateButton" destination="5DJ-y2-VYu" id="j7k-eh-fUM"/>
                 <outlet property="tableView" destination="ClY-LI-xex" id="nAR-tg-l5t"/>
                 <outlet property="validateOkButton" destination="btt-VO-uEm" id="FrF-UV-s1H"/>
                 <outlet property="validateSpinner" destination="6NP-Fx-dkK" id="f0p-Xp-Gpr"/>
@@ -688,7 +689,7 @@
         <window title="ImagrAdmin" allowsToolTipsWhenApplicationIsInactive="NO" autorecalculatesKeyViewLoop="NO" releasedWhenClosed="NO" animationBehavior="default" id="QvC-M9-y7g">
             <windowStyleMask key="styleMask" titled="YES" closable="YES" miniaturizable="YES" resizable="YES"/>
             <rect key="contentRect" x="0.0" y="0.0" width="841" height="461"/>
-            <rect key="screenRect" x="0.0" y="0.0" width="2560" height="1417"/>
+            <rect key="screenRect" x="0.0" y="0.0" width="1440" height="877"/>
             <value key="minSize" type="size" width="841" height="461"/>
             <view key="contentView" id="EiT-Mj-1SZ">
                 <rect key="frame" x="0.0" y="0.0" width="841" height="461"/>
@@ -1047,10 +1048,10 @@
                                 <rect key="frame" x="0.0" y="0.0" width="767" height="240"/>
                                 <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                                <size key="minSize" width="752" height="240"/>
+                                <size key="minSize" width="767" height="240"/>
                                 <size key="maxSize" width="769" height="10000000"/>
                                 <color key="insertionPointColor" name="controlTextColor" catalog="System" colorSpace="catalog"/>
-                                <size key="minSize" width="752" height="240"/>
+                                <size key="minSize" width="767" height="240"/>
                                 <size key="maxSize" width="769" height="10000000"/>
                             </textView>
                         </subviews>
@@ -1061,7 +1062,7 @@
                         <autoresizingMask key="autoresizingMask"/>
                     </scroller>
                     <scroller key="verticalScroller" verticalHuggingPriority="750" horizontal="NO" id="7Y2-lv-oGv">
-                        <rect key="frame" x="753" y="1" width="15" height="240"/>
+                        <rect key="frame" x="752" y="1" width="16" height="240"/>
                         <autoresizingMask key="autoresizingMask"/>
                     </scroller>
                 </scrollView>
