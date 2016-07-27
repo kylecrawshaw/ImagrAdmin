@@ -25,14 +25,15 @@ class MainViewController: NSViewController {
     @IBOutlet weak var validateSpinner: NSProgressIndicator!
     @IBOutlet weak var validateOkButton: NSButton!
     @IBOutlet weak var validateView: NSView!
-    
-    
+    @IBOutlet weak var skipValidateButton: NSButton!
+
     let openPanel: NSOpenPanel = NSOpenPanel()
     private var task: NSTask?
-    
+
     private var selectedConfigPath: String!
-    private var validationOutput: String!
-    
+//    private var validationOutput: String!
+//    private var validationOutput: NSMutableAttributedString?
+
     override func viewDidAppear() {
         super.viewDidAppear()
         NSNotificationCenter.defaultCenter().addObserver(self, selector: #selector(updateTableNotificationReceived(_:)), name:"UpdateWorkflowTableView", object: nil)
@@ -41,7 +42,7 @@ class MainViewController: NSViewController {
             displayOpenPanel()
         }
     }
-    
+
     override func viewDidLoad() {
         super.viewDidLoad()
         tableView.setDelegate(self)
@@ -50,22 +51,22 @@ class MainViewController: NSViewController {
         let registeredTypes: [String] = [NSStringPboardType]
         tableView.registerForDraggedTypes(registeredTypes)
     }
-    
-    
+
+
     @IBAction func removeWorkflow(sender: AnyObject) {
         if tableView.selectedRow >= 0 {
             ImagrConfigManager.sharedManager.workflows.removeAtIndex(tableView.selectedRow)
             updateView()
         }
     }
-    
+
     func updateView() {
         NSLog("Updating config view")
         if ImagrConfigManager.sharedManager.hasLoaded == false {
             NSLog("Unable to load config view. ImagrConfigManager.sharedManager has not been initialized")
             return
         }
-        
+
         let imagrPassword = ImagrConfigManager.sharedManager.password
         if imagrPassword != nil {
             passwordField.placeholderString = "Hashed password is already set"
@@ -76,14 +77,14 @@ class MainViewController: NSViewController {
             passwordField.enabled = true
             changePasswordButton.hidden = true
         }
-        
+
         let workflowTitles = ImagrConfigManager.sharedManager.workflowTitles()
 
         let bgImage = ImagrConfigManager.sharedManager.backgroundImage
         if backgroundImageField.stringValue == "" && bgImage != nil {
             backgroundImageField.stringValue = bgImage!
         }
-        
+
         let autorunWorkflow = ImagrConfigManager.sharedManager.autorunWorkflow
         let selectedAutorun = autorunDropdown.selectedItem
         autorunDropdown.removeAllItems()
@@ -94,7 +95,7 @@ class MainViewController: NSViewController {
         } else if selectedAutorun != nil {
             autorunDropdown.selectItemWithTitle(selectedAutorun!.title)
         }
-        
+
         let defaultWorkflow = ImagrConfigManager.sharedManager.defaultWorkflow
         let selectedDefault = defaultDropdown.selectedItem
         defaultDropdown.removeAllItems()
@@ -104,34 +105,34 @@ class MainViewController: NSViewController {
             defaultDropdown.selectItemWithTitle(defaultWorkflow!)
         } else if selectedDefault != nil {
             defaultDropdown.selectItemWithTitle(selectedDefault!.title)
-        } 
-        
-        
+        }
+
+
         tableView.reloadData()
     }
-    
+
     @IBAction func terminateValidationTask(sender: AnyObject) {
         task!.terminate()
     }
-    
-    
+
+
     @IBAction func addWorkflow(sender: AnyObject) {
         let workflow = ImagrWorkflowManager(name: "", description: "", components: [])
         ImagrConfigManager.sharedManager.workflows.append(workflow)
         workflow.displayWorkflowWindow()
     }
-    
+
     @IBAction func changePasswordClicked(sender: AnyObject) {
         passwordField.stringValue = ""
         passwordField.enabled = true
         changePasswordButton.enabled = false
     }
-    
+
     func updateTableNotificationReceived(sender: AnyObject) {
         updateView()
     }
-    
-    
+
+
     func displayOpenPanel() {
         openPanel.message = "Locate imagr_config.plist or a directory to create imagr_config.plist"
         openPanel.allowsMultipleSelection = false
@@ -139,20 +140,20 @@ class MainViewController: NSViewController {
         openPanel.canChooseDirectories = true
         openPanel.beginSheetModalForWindow(mainWindow, completionHandler: openPanelDidClose)
     }
-    
+
     func openPanelDidClose(response: NSModalResponse) {
         if response != 0 {
             selectedConfigPath = openPanel.URL!.path!
             NSLog("User selected path \(selectedConfigPath)")
-            
+
             // Check if the path selected is a directory or
             var isDir: ObjCBool = false
             NSFileManager.defaultManager().fileExistsAtPath(openPanel.URL!.path!, isDirectory: &isDir)
-            
+
             if isDir {
                 selectedConfigPath = "\(selectedConfigPath)/imagr_config.plist"
             }
-            
+
             if NSFileManager.defaultManager().fileExistsAtPath(selectedConfigPath) {
                 NSLog("Need to validate \(selectedConfigPath)")
                 displayValidateView(selectedConfigPath)
@@ -163,9 +164,9 @@ class MainViewController: NSViewController {
             NSApplication.sharedApplication().terminate(self)
         }
     }
-    
 
-    
+
+
     @IBAction func saveButtonClicked(sender: AnyObject) {
         saveConfig()
         let saveAlert = NSAlert()
@@ -173,35 +174,34 @@ class MainViewController: NSViewController {
         saveAlert.messageText = "Imagr config successfully saved!"
         saveAlert.beginSheetModalForWindow(mainWindow, completionHandler: nil)
     }
-    
+
     @IBAction func validateButtonClicked(sender: AnyObject) {
         let tempPlistPath = "\(tempDir)imagr_config.plist"
         saveConfig(tempPlistPath)
         displayValidateView(tempPlistPath)
     }
-    
+
     func updateConfig() {
         if passwordField.enabled && passwordField.stringValue != "" {
-//            ImagrConfigManager.sharedManager.password = hashPassword(passwordField.stringValue)
             ImagrConfigManager.sharedManager.password = passwordField.stringValue.sha512()
             passwordField.enabled = false
             changePasswordButton.enabled = true
             passwordField.stringValue = ""
             NSLog("Password was updated")
         }
-        
+
         if backgroundImageField.stringValue == "" {
             ImagrConfigManager.sharedManager.backgroundImage = nil
         } else {
             ImagrConfigManager.sharedManager.backgroundImage = backgroundImageField.stringValue
         }
-        
+
         if defaultDropdown.selectedItem!.title == "" {
             ImagrConfigManager.sharedManager.defaultWorkflow = nil
         } else {
             ImagrConfigManager.sharedManager.defaultWorkflow = defaultDropdown.selectedItem!.title
         }
-        
+
         if autorunDropdown.selectedItem!.title == "" {
             ImagrConfigManager.sharedManager.autorunWorkflow = nil
         } else {
@@ -209,13 +209,13 @@ class MainViewController: NSViewController {
         }
         NSLog("Updated ImagrConfigManager from MainViewController")
     }
-    
+
     func saveConfig() {
         updateConfig()
         ImagrConfigManager.sharedManager.save()
         NSLog("Imagr config saved to path: \(ImagrConfigManager.sharedManager.imagrConfigPath!)")
     }
-    
+
     func saveConfig(path: String) {
         updateConfig()
         ImagrConfigManager.sharedManager.save(path)
@@ -224,25 +224,7 @@ class MainViewController: NSViewController {
 
 
     @IBAction func validateOkClicked(sender: AnyObject) {
-//        if validationOutput.rangeOfString("SUCCESS: ") != nil {
-//            if NSFileManager.defaultManager().fileExistsAtPath(ImagrConfigManager.sharedManager.imagrConfigPath!) {
-//            
-////                let imagrPassword = ImagrConfigManager.sharedManager.password
-////                if imagrPassword != nil {
-////                    passwordField.placeholderString = "Hashed password is already set"
-////                    passwordField.enabled = false
-////                    changePasswordButton.hidden = false
-////                }
-//            } else {
-//                saveConfig()
-//            }
-//        } else {
-//            if ImagrConfigManager.sharedManager.imagrConfigPath == nil {
-//                NSApplication.sharedApplication().terminate(self)
-//            }
-//        }
         mainWindow.contentView = mainView
-        validationOutput = nil
     }
 
 
@@ -253,28 +235,30 @@ class MainViewController: NSViewController {
         task!.launchPath = "/usr/bin/python"
         let validatePlistPath = NSBundle.mainBundle().pathForResource("validateplist", ofType: "py")!
         task!.arguments = [validatePlistPath, plistPath]
-        
+
         let pipe = NSPipe()
         task!.standardOutput = pipe
         let outHandle = pipe.fileHandleForReading
         outHandle.waitForDataInBackgroundAndNotify()
-        
+
         var obs1 : NSObjectProtocol!
         obs1 = NSNotificationCenter.defaultCenter().addObserverForName(NSFileHandleDataAvailableNotification, object: outHandle, queue: nil) {
             notification -> Void in
             let data = outHandle.availableData
             if data.length > 0 {
-                if let str = NSString(data: data, encoding: NSUTF8StringEncoding) {
-                    self.validationOutput = self.validationOutput.stringByAppendingString(str as String)
+                if let str = NSString(data: data, encoding: NSUTF8StringEncoding) as? String {
+                    let lines = str.componentsSeparatedByString("\n")
+
+                    for line in lines {
+                        self.validateTextField.textStorage?.appendAttributedString(formatMessageString(line))
+                    }
                 }
                 outHandle.waitForDataInBackgroundAndNotify()
             } else {
                 NSNotificationCenter.defaultCenter().removeObserver(obs1)
             }
-            self.validationOutput = self.validationOutput.stringByReplacingOccurrencesOfString("                                ", withString: "\n")
-            self.validateTextField.string = self.validationOutput
         }
-        
+
         var obs2 : NSObjectProtocol!
         obs2 = NSNotificationCenter.defaultCenter().addObserverForName(NSTaskDidTerminateNotification, object: task, queue: nil) {
             notification -> Void in
@@ -282,6 +266,7 @@ class MainViewController: NSViewController {
             self.validateSpinner.stopAnimation(self)
             self.validateSpinner.hidden = true
             self.validateOkButton.enabled = true
+            self.skipValidateButton.enabled = false
             NSNotificationCenter.defaultCenter().removeObserver(obs2)
             self.task = nil
         }
@@ -289,17 +274,16 @@ class MainViewController: NSViewController {
         validateSpinner.startAnimation(self)
         validateSpinner.hidden = false
         validateOkButton.enabled = false
-        if self.validationOutput == nil {
-            self.validationOutput = "Running validateplist...\n\n"
-        }
-        self.validateTextField.string = self.validationOutput
+        skipValidateButton.enabled = true
         let popTime = dispatch_time(DISPATCH_TIME_NOW, Int64(0.5 * Double(NSEC_PER_SEC)))
         dispatch_after(popTime, dispatch_get_main_queue()) {
+            let startOutput = NSAttributedString(string: "Running validateplist...\n\n", attributes: [NSForegroundColorAttributeName: NSColor.blackColor()])
+            self.validateTextField.textStorage?.appendAttributedString(startOutput)
             self.task!.launch()
         }
     }
-    
-    
+
+
 }
 
 
@@ -318,13 +302,13 @@ extension MainViewController: NSTableViewDataSource {
 
 
 extension MainViewController: NSTableViewDelegate {
-    
+
     func tableView(tableView: NSTableView, viewForTableColumn tableColumn: NSTableColumn?, row: Int) -> NSView? {
-        
+
         var text: String = ""
         var cellIdentifier: String = ""
-        
-        
+
+
         let workflow = ImagrConfigManager.sharedManager.workflows[row]
         if tableColumn == tableView.tableColumns[0] {
             text = workflow.name
@@ -348,15 +332,15 @@ extension MainViewController: NSTableViewDelegate {
         }
         return nil
     }
-    
+
     @IBAction func tableViewDoubleClick(sender: AnyObject) {
         guard tableView.selectedRow >= 0 , let workflow = ImagrConfigManager.sharedManager.workflows?[tableView.selectedRow] else {
             return
         }
         workflow.displayWorkflowWindow()
-        
+
     }
-    
+
     // DRAG AND DROP METHODS
     func tableView(aTableView: NSTableView, writeRowsWithIndexes rowIndexes: NSIndexSet, toPasteboard pboard: NSPasteboard) -> Bool {
         if (aTableView == tableView) {
@@ -369,24 +353,24 @@ extension MainViewController: NSTableViewDelegate {
             return false
         }
     }
-    
+
     func tableView(aTableView: NSTableView, validateDrop info: NSDraggingInfo, proposedRow row: Int, proposedDropOperation operation: NSTableViewDropOperation) -> NSDragOperation {
-        
+
         if operation == .Above {
             return .Move
         }
         return .Every
-        
+
     }
-    
+
     func tableView(tableView: NSTableView, acceptDrop info: NSDraggingInfo, row: Int, dropOperation: NSTableViewDropOperation) -> Bool {
         let data:NSData = info.draggingPasteboard().dataForType(NSStringPboardType)!
         let rowIndexes:NSIndexSet = NSKeyedUnarchiver.unarchiveObjectWithData(data) as! NSIndexSet
-        
+
         if ((info.draggingSource() as! NSTableView == tableView) && (tableView == tableView)) {
             let value = ImagrConfigManager.sharedManager.workflows[rowIndexes.firstIndex]
             ImagrConfigManager.sharedManager.workflows.removeAtIndex(rowIndexes.firstIndex)
-            
+
             if (row > ImagrConfigManager.sharedManager.workflows.count){
                 ImagrConfigManager.sharedManager.workflows.insert(value, atIndex: row-1)
             } else {

@@ -28,6 +28,7 @@
                 <outlet property="mainView" destination="EiT-Mj-1SZ" id="TGv-et-2WS"/>
                 <outlet property="mainWindow" destination="QvC-M9-y7g" id="TZf-px-RdH"/>
                 <outlet property="passwordField" destination="j3f-5P-sub" id="XZc-Au-pIw"/>
+                <outlet property="skipValidateButton" destination="5DJ-y2-VYu" id="j7k-eh-fUM"/>
                 <outlet property="tableView" destination="ClY-LI-xex" id="nAR-tg-l5t"/>
                 <outlet property="validateOkButton" destination="btt-VO-uEm" id="FrF-UV-s1H"/>
                 <outlet property="validateSpinner" destination="6NP-Fx-dkK" id="f0p-Xp-Gpr"/>
@@ -1113,7 +1114,7 @@ DQ
                 <constraint firstAttribute="bottom" secondItem="5x6-2k-Gi6" secondAttribute="bottom" constant="77" id="hIx-r3-sJY"/>
                 <constraint firstAttribute="bottom" secondItem="btt-VO-uEm" secondAttribute="bottom" constant="30" id="vcu-mM-8no"/>
             </constraints>
-            <point key="canvasLocation" x="487.5" y="223.5"/>
+            <point key="canvasLocation" x="520.5" y="216.5"/>
         </customView>
     </objects>
     <resources>
