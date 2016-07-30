@@ -18,9 +18,13 @@ public class ImagrConfigManager {
     var defaultWorkflow: String?
     var backgroundImage: String?
     var autorunWorkflow: String?
-    private var configData: NSDictionary! = NSDictionary()
+    private var configData: NSMutableDictionary! = NSMutableDictionary()
     var hasLoaded: Bool = false
 
+    public func loadConfig() {
+        NSLog("Initialized new ImagrConfigManager.sharedManager")
+        hasLoaded = true
+    }
     
     public func loadConfig(path: String!) {
         NSLog("Initialized ImagrConfigManager.sharedManager with \(path)")
@@ -116,10 +120,7 @@ public class ImagrConfigManager {
                 formattedWorkflows.append(workflow.asDict())
             }
         }
-        
-        if formattedWorkflows.count > 0 {
-            configData.setValue(formattedWorkflows, forKey: "workflows")
-        }
+        configData.setValue(formattedWorkflows, forKey: "workflows")
         NSLog("Updating configData from ImagrConfigManager")
     }
     
