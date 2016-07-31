@@ -18,8 +18,8 @@ public class ImagrWorkflowManager {
     var restartAction: String!
     var blessTarget: Bool!
     var hidden: Bool!
-    private var workflowWindowController: NSWindowController?
-    private var workflowViewController: WorkflowViewController?
+    var workflowWindowController: NSWindowController?
+    var workflowViewController: WorkflowViewController?
     var workflowWindow: NSWindow?
     var workflowID: Int! = ImagrConfigManager.sharedManager.nextWorkflowID()
 
