@@ -45,7 +45,7 @@ class LocalizationComponentViewController: NSViewController {
         }
     }
     
-    @IBAction func okButtonClicked(sender: AnyObject) {
+    override func viewDidDisappear() {
         if kbLayoutNameDropdown.selectedItem != nil {
             component!.keyboardLayoutName = kbLayoutNameDropdown.selectedItem!.title
         }
@@ -67,6 +67,10 @@ class LocalizationComponentViewController: NSViewController {
         }
         
         component!.notifyUpdateTable()
+    }
+    
+    @IBAction func okButtonClicked(sender: AnyObject) {
+        component!.closeComponentPanel()
     }
     
     

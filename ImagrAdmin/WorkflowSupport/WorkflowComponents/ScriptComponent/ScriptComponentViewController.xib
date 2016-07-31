@@ -5,7 +5,7 @@
         <plugIn identifier="com.apple.InterfaceBuilder.CocoaPlugin" version="10117"/>
     </dependencies>
     <objects>
-        <customObject id="-2" userLabel="File's Owner" customClass="ScriptComponentViewController" customModule="ImagrManager" customModuleProvider="target">
+        <customObject id="-2" userLabel="File's Owner" customClass="ScriptComponentViewController" customModule="ImagrAdmin" customModuleProvider="target">
             <connections>
                 <outlet property="bottomView" destination="KEK-4u-y8W" id="DQP-GE-oxN"/>
                 <outlet property="contentView" destination="MjI-k5-KUM" id="yQi-Lh-6tU"/>
@@ -23,18 +23,18 @@
         <customObject id="-1" userLabel="First Responder" customClass="FirstResponder"/>
         <customObject id="-3" userLabel="Application" customClass="NSObject"/>
         <customView id="amk-Gt-CE3">
-            <rect key="frame" x="0.0" y="0.0" width="483" height="124"/>
+            <rect key="frame" x="0.0" y="0.0" width="483" height="146"/>
             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
             <subviews>
-                <customView identifier="placeholder" ambiguous="YES" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="MjI-k5-KUM">
-                    <rect key="frame" x="0.0" y="60" width="483" height="8"/>
+                <customView identifier="placeholder" translatesAutoresizingMaskIntoConstraints="NO" id="MjI-k5-KUM">
+                    <rect key="frame" x="0.0" y="82" width="483" height="8"/>
                     <constraints>
                         <constraint firstAttribute="width" constant="483" id="2ZX-m7-3rb"/>
                         <constraint firstAttribute="height" constant="8" id="Rr8-gL-ogC"/>
                     </constraints>
                 </customView>
                 <button fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="bzZ-Wy-tjj">
-                    <rect key="frame" x="37" y="87" width="82" height="18"/>
+                    <rect key="frame" x="37" y="109" width="82" height="18"/>
                     <buttonCell key="cell" type="radio" title="From URL" bezelStyle="regularSquare" imagePosition="left" alignment="left" inset="2" id="eSD-7N-x4e">
                         <behavior key="behavior" changeContents="YES" doesNotDimImage="YES" lightByContents="YES"/>
                         <font key="font" metaFont="system"/>
@@ -44,7 +44,7 @@
                     </connections>
                 </button>
                 <button fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="X5n-mv-8Q4">
-                    <rect key="frame" x="124" y="87" width="66" height="18"/>
+                    <rect key="frame" x="124" y="109" width="66" height="18"/>
                     <buttonCell key="cell" type="radio" title="Manual" bezelStyle="regularSquare" imagePosition="left" alignment="left" inset="2" id="63b-93-PBz">
                         <behavior key="behavior" changeContents="YES" doesNotDimImage="YES" lightByContents="YES"/>
                         <font key="font" metaFont="system"/>
@@ -53,18 +53,18 @@
                         <action selector="toggleScriptType:" target="-2" id="C3I-tk-hbi"/>
                     </connections>
                 </button>
-                <customView ambiguous="YES" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="KEK-4u-y8W">
-                    <rect key="frame" x="0.0" y="0.0" width="483" height="47"/>
+                <customView translatesAutoresizingMaskIntoConstraints="NO" id="KEK-4u-y8W">
+                    <rect key="frame" x="0.0" y="0.0" width="483" height="69"/>
                     <subviews>
                         <button translatesAutoresizingMaskIntoConstraints="NO" id="Qid-W3-m2R">
-                            <rect key="frame" x="37" y="14" width="123" height="18"/>
+                            <rect key="frame" x="37" y="36" width="123" height="18"/>
                             <buttonCell key="cell" type="check" title="Run at First Boot" bezelStyle="regularSquare" imagePosition="left" state="on" inset="2" id="9ee-3z-7gS">
                                 <behavior key="behavior" changeContents="YES" doesNotDimImage="YES" lightByContents="YES"/>
                                 <font key="font" metaFont="system"/>
                             </buttonCell>
                         </button>
                         <button verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="6J0-pb-EXM">
-                            <rect key="frame" x="379" y="5" width="59" height="32"/>
+                            <rect key="frame" x="379" y="27" width="59" height="32"/>
                             <buttonCell key="cell" type="push" title="OK" bezelStyle="rounded" alignment="center" borderStyle="border" imageScaling="proportionallyDown" inset="2" id="Zq4-u6-Ekb">
                                 <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
                                 <font key="font" metaFont="system"/>
@@ -78,11 +78,12 @@ DQ
                         </button>
                     </subviews>
                     <constraints>
-                        <constraint firstAttribute="bottom" secondItem="Qid-W3-m2R" secondAttribute="bottom" constant="16" id="5ob-g0-nFZ"/>
+                        <constraint firstAttribute="height" constant="69" id="DaP-5L-hyT"/>
+                        <constraint firstAttribute="bottom" secondItem="Qid-W3-m2R" secondAttribute="bottom" constant="38" id="FM6-Zo-pRP"/>
                         <constraint firstAttribute="width" constant="483" id="KYe-M8-soC"/>
+                        <constraint firstAttribute="bottom" secondItem="6J0-pb-EXM" secondAttribute="bottom" constant="34" id="Our-7z-KhR"/>
                         <constraint firstAttribute="trailing" secondItem="6J0-pb-EXM" secondAttribute="trailing" constant="51" id="gKJ-v1-iaH"/>
                         <constraint firstItem="Qid-W3-m2R" firstAttribute="leading" secondItem="KEK-4u-y8W" secondAttribute="leading" constant="39" id="ml2-cy-7sR"/>
-                        <constraint firstAttribute="bottom" secondItem="6J0-pb-EXM" secondAttribute="bottom" constant="12" id="xoj-Kf-gz5"/>
                     </constraints>
                 </customView>
             </subviews>
@@ -93,13 +94,13 @@ DQ
                 <constraint firstAttribute="trailing" secondItem="MjI-k5-KUM" secondAttribute="trailing" id="ext-Ew-yoM"/>
                 <constraint firstItem="KEK-4u-y8W" firstAttribute="top" secondItem="MjI-k5-KUM" secondAttribute="bottom" constant="13" id="yjl-zi-qRt"/>
             </constraints>
-            <point key="canvasLocation" x="549.5" y="60"/>
+            <point key="canvasLocation" x="549.5" y="71"/>
         </customView>
         <customView identifier="url" id="Kl8-C5-vJR">
             <rect key="frame" x="0.0" y="0.0" width="483" height="69"/>
             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
             <subviews>
-                <textField identifier="url" verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="6l2-Ww-dKT">
+                <textField verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="6l2-Ww-dKT">
                     <rect key="frame" x="31" y="15" width="420" height="22"/>
                     <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" selectable="YES" editable="YES" sendsActionOnEndEditing="YES" state="on" borderStyle="bezel" drawsBackground="YES" id="J2j-TK-89o">
                         <font key="font" metaFont="system"/>

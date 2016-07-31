@@ -103,16 +103,29 @@ public class ImagrWorkflowManager {
 
         workflowViewController = WorkflowViewController()
         workflowViewController!.identifier = String(name)
-            
+
         workflowWindow = NSWindow(contentViewController: workflowViewController!)
         workflowWindow!.title = "Edit Workflow"
+        
+        // Set a fixed sized for the workflow window
         let fixedSize = workflowWindow!.frame.size
         workflowWindow!.minSize = fixedSize
         workflowWindow!.maxSize = fixedSize
         
-        workflowViewController?.workflowWindow = workflowWindow
+        
+        // Hide window title bar buttons
+        let closeButton = workflowWindow!.standardWindowButton(NSWindowButton.CloseButton)
+        closeButton!.hidden = true
+        
+        let minButton = workflowWindow!.standardWindowButton(NSWindowButton.MiniaturizeButton)
+        minButton!.hidden = true
+        
+        let maxButton = workflowWindow!.standardWindowButton(NSWindowButton.ZoomButton)
+        maxButton!.hidden = true
+        
+        workflowViewController!.workflowWindow = workflowWindow
         
         workflowWindowController = NSWindowController(window: workflowWindow)
-            
+        
     }
 }

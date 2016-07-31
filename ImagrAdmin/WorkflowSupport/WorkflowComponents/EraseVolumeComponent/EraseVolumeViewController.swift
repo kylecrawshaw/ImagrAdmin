@@ -23,10 +23,14 @@ class EraseVolumeViewController: NSViewController {
         volumeFormatField.stringValue = component!.volumeFormat
     }
     
-    @IBAction func okButtonClicked(sender: AnyObject) {
+    override func viewDidDisappear() {
         component!.volumeName = volumeNameField.stringValue
         component!.volumeFormat = volumeFormatField.stringValue
         component!.notifyUpdateTable()
+    }
+    
+    @IBAction func okButtonClicked(sender: AnyObject) {
+        component!.closeComponentPanel()
     }
 
     

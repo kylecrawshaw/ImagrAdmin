@@ -28,7 +28,7 @@ class ImageComponentViewController: NSViewController {
         
     }
     
-    @IBAction func okButtonClicked(sender: AnyObject) {
+    override func viewDidDisappear() {
         component!.URL = imageURLField.stringValue
         if verifyImageCheckbox.state == 0 {
             component!.verify = false
@@ -36,6 +36,10 @@ class ImageComponentViewController: NSViewController {
             component!.verify = true
         }
         component!.notifyUpdateTable()
+    }
+    
+    @IBAction func okButtonClicked(sender: AnyObject) {
+        component!.closeComponentPanel()
     }
     
     

@@ -60,9 +60,6 @@ class WorkflowViewController: NSViewController {
     
     func updateTableNotificationReceived(sender: AnyObject) {
         NSLog("Received notification to update workflow with ID: \(workflow?.workflowID)")
-        if workflowWindow.sheets.count > 0 {
-            workflowWindow.endSheet(workflowWindow.sheets[0])
-        }
         tableView.reloadData()
     }
     
@@ -72,22 +69,31 @@ class WorkflowViewController: NSViewController {
 
     
     override func viewDidDisappear() {
-        workflow!.name = nameField.stringValue
-        workflow!.description = descriptionField.stringValue
-        workflow!.restartAction = restartActionDropdown.selectedItem!.title
-        
-        if blessCheckBox.state == 0 {
-            workflow!.blessTarget = false
+        let workflowTitles = ImagrConfigManager.sharedManager.workflowTitles()
+        if workflowTitles.contains(nameField.stringValue) && workflow!.name != nameField.stringValue{
+            let nameAlert = NSAlert()
+            nameAlert.alertStyle = NSAlertStyle.CriticalAlertStyle
+            nameAlert.messageText = "This name is already assigned to another workflow"
+            nameAlert.informativeText = "Workflow names must be unique"
+            nameAlert.beginSheetModalForWindow(workflowWindow!, completionHandler: nil)
         } else {
-            workflow!.blessTarget = true
+            workflow!.name = nameField.stringValue
+            workflow!.description = descriptionField.stringValue
+            workflow!.restartAction = restartActionDropdown.selectedItem!.title
+            
+            if blessCheckBox.state == 0 {
+                workflow!.blessTarget = false
+            } else {
+                workflow!.blessTarget = true
+            }
+            
+            if hiddenCheckbox.state == 1 {
+                workflow!.hidden = true
+            } else {
+                workflow!.hidden = false
+            }
+            NSNotificationCenter.defaultCenter().postNotificationName("UpdateWorkflowTableView", object: nil)
         }
-        
-        if hiddenCheckbox.state == 1 {
-            workflow!.hidden = true
-        } else {
-            workflow!.hidden = false
-        }
-        NSNotificationCenter.defaultCenter().postNotificationName("UpdateWorkflowTableView", object: nil)
     }
     
     
@@ -128,18 +134,7 @@ class WorkflowViewController: NSViewController {
     }
     
     @IBAction func okClicked(sender: AnyObject) {
-        let workflowTitles = ImagrConfigManager.sharedManager.workflowTitles()
-        if workflowTitles.contains(nameField.stringValue) && workflow!.name != nameField.stringValue{
-            let nameAlert = NSAlert()
-            nameAlert.alertStyle = NSAlertStyle.CriticalAlertStyle
-            nameAlert.messageText = "This name is already assigned to another workflow"
-            nameAlert.informativeText = "Workflow names must be unique"
-            nameAlert.beginSheetModalForWindow(workflowWindow!, completionHandler: nil)
-        } else {
-            workflow!.name = nameField.stringValue
-            workflow!.description = descriptionField.stringValue
-            workflowWindow.orderOut(nil)
-        }
+        workflowWindow.orderOut(nil)
     }
     
 }

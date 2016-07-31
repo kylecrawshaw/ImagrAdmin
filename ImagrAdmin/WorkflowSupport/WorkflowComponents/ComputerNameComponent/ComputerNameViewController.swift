@@ -34,7 +34,7 @@ class ComputerNameViewController: NSViewController {
         
     }
     
-    @IBAction func okButtonClicked(sender: AnyObject) {
+    override func viewDidDisappear() {
         if useSerialCheckbox.state == 1 {
             component!.useSerial = true
         } else {
@@ -47,6 +47,10 @@ class ComputerNameViewController: NSViewController {
             component!.auto = false
         }
         component!.notifyUpdateTable()
+    }
+    
+    @IBAction func okButtonClicked(sender: AnyObject) {
+        component!.closeComponentPanel()
     }
 
     

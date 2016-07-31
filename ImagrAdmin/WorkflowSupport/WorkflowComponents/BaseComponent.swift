@@ -41,6 +41,20 @@ public class BaseComponent {
         componentWindowController!.showWindow(self)
     }
     
+    func closeComponentPanel() {
+        let workflow = ImagrConfigManager.sharedManager.getWorkflow(workflowName)
+        
+        if workflow != nil {
+            NSLog("Closing component panel for \(type)-\(id) in \(workflowName)")
+            if workflow!.workflowWindow!.sheets.count > 0 {
+                workflow!.workflowWindow!.endSheet(workflow!.workflowWindow!.sheets[0])
+            }
+        } else {
+            NSLog("Missing workflow object for \(workflowName). Unable to close panel")
+        }
+
+    }
+    
     func buildComponentPanel() {}
     
     
