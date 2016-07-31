@@ -376,9 +376,9 @@
             </items>
         </menu>
         <window title="ImagrAdmin" allowsToolTipsWhenApplicationIsInactive="NO" autorecalculatesKeyViewLoop="NO" releasedWhenClosed="NO" animationBehavior="default" id="QvC-M9-y7g">
-            <windowStyleMask key="styleMask" titled="YES" closable="YES" miniaturizable="YES" resizable="YES"/>
+            <windowStyleMask key="styleMask" titled="YES" miniaturizable="YES" resizable="YES"/>
             <rect key="contentRect" x="0.0" y="0.0" width="841" height="461"/>
-            <rect key="screenRect" x="0.0" y="0.0" width="1440" height="900"/>
+            <rect key="screenRect" x="0.0" y="0.0" width="1440" height="877"/>
             <value key="minSize" type="size" width="841" height="461"/>
             <view key="contentView" id="EiT-Mj-1SZ">
                 <rect key="frame" x="0.0" y="0.0" width="841" height="461"/>
@@ -702,8 +702,8 @@
                     <constraint firstItem="VFT-Vr-L8M" firstAttribute="leading" secondItem="EiT-Mj-1SZ" secondAttribute="leading" constant="20" id="3Ly-60-R5w"/>
                     <constraint firstAttribute="bottom" secondItem="oOV-ZN-y7J" secondAttribute="bottom" constant="27" id="6n5-s4-iEu"/>
                     <constraint firstAttribute="bottom" secondItem="Hr7-o0-6U1" secondAttribute="bottom" constant="27" id="7tR-Ee-hNv"/>
+                    <constraint firstItem="dXF-qW-Hr5" firstAttribute="centerX" secondItem="EiT-Mj-1SZ" secondAttribute="centerX" id="ARu-pd-zlN"/>
                     <constraint firstAttribute="trailing" secondItem="kwb-nB-ewT" secondAttribute="trailing" constant="47" id="JUi-L2-WvL"/>
-                    <constraint firstItem="dXF-qW-Hr5" firstAttribute="centerX" secondItem="EiT-Mj-1SZ" secondAttribute="centerX" id="g7w-6G-N1G"/>
                     <constraint firstItem="VFT-Vr-L8M" firstAttribute="top" secondItem="EiT-Mj-1SZ" secondAttribute="top" constant="191" id="kmd-6C-9Qa"/>
                     <constraint firstAttribute="trailing" secondItem="VFT-Vr-L8M" secondAttribute="trailing" constant="20" id="lIE-mc-jC3"/>
                     <constraint firstAttribute="bottom" secondItem="VFT-Vr-L8M" secondAttribute="bottom" constant="47" id="mDK-Wp-2Yx"/>

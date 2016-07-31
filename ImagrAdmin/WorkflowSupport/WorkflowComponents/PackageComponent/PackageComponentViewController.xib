@@ -5,7 +5,7 @@
         <plugIn identifier="com.apple.InterfaceBuilder.CocoaPlugin" version="10117"/>
     </dependencies>
     <objects>
-        <customObject id="-2" userLabel="File's Owner" customClass="PackageComponentViewController" customModule="ImagrManager" customModuleProvider="target">
+        <customObject id="-2" userLabel="File's Owner" customClass="PackageComponentViewController" customModule="ImagrAdmin" customModuleProvider="target">
             <connections>
                 <outlet property="firstBootCheckbox" destination="AbD-Mi-tBB" id="Osu-Nb-hr6"/>
                 <outlet property="packageURLField" destination="6l2-Ww-dKT" id="46b-GC-m8t"/>

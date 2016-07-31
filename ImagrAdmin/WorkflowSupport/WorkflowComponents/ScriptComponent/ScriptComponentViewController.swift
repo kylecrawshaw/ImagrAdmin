@@ -62,6 +62,25 @@ class ScriptComponentViewController: NSViewController {
         
     }
     
+    override func viewDidDisappear() {
+        if manualRadioButton.state == 1 {
+            component!.content = scriptContent.string
+            component!.URL = nil
+        } else {
+            component!.content = nil
+            component!.URL = scriptURLField.stringValue
+        }
+        
+        
+        if firstBootCheckbox.state == 0 {
+            component!.firstBoot = false
+        } else {
+            component!.firstBoot = true
+        }
+        
+        component!.notifyUpdateTable()
+    }
+    
     func updateView() {
         var newView: NSView!
         if urlRadioButton.state == 1{
@@ -108,23 +127,7 @@ class ScriptComponentViewController: NSViewController {
     }
     
     @IBAction func okButtonClicked(sender: AnyObject) {
-        
-        if manualRadioButton.state == 1 {
-            component!.content = scriptContent.string
-            component!.URL = nil
-        } else {
-            component!.content = nil
-            component!.URL = scriptURLField.stringValue
-        }
-        
-        
-        if firstBootCheckbox.state == 0 {
-            component!.firstBoot = false
-        } else {
-            component!.firstBoot = true
-        }
-        
-        component!.notifyUpdateTable()
+        component!.closeComponentPanel()
     }
     
     @IBAction func toggleScriptType(sender: NSButton) {

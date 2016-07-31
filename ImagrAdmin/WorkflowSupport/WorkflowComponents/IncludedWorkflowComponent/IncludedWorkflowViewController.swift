@@ -69,6 +69,16 @@ class IncludedWorkflowViewController: NSViewController {
         
     }
     
+    override func viewDidDisappear() {
+        if selectRadioButton.state == 1 {
+            component!.includedWorkflow = includedWorkflowDropdown!.titleOfSelectedItem
+        } else {
+            component!.script = scriptField.string
+        }
+        
+        component!.notifyUpdateTable()
+    }
+    
     @IBAction func updateView(sender: AnyObject) {
         var newView: NSView!
         if selectRadioButton.state == 1 {
@@ -113,14 +123,7 @@ class IncludedWorkflowViewController: NSViewController {
     }
     
     @IBAction func okButtonClicked(sender: AnyObject) {
-        
-        if selectRadioButton.state == 1 {
-            component!.includedWorkflow = includedWorkflowDropdown!.titleOfSelectedItem
-        } else {
-            component!.script = scriptField.string
-        }
-        
-        component!.notifyUpdateTable()
+        component!.closeComponentPanel()
     }
     
 }

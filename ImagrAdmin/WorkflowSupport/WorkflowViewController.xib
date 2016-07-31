@@ -5,7 +5,7 @@
         <plugIn identifier="com.apple.InterfaceBuilder.CocoaPlugin" version="10117"/>
     </dependencies>
     <objects>
-        <customObject id="-2" userLabel="File's Owner" customClass="WorkflowViewController" customModule="ImagrManager" customModuleProvider="target">
+        <customObject id="-2" userLabel="File's Owner" customClass="WorkflowViewController" customModule="ImagrAdmin" customModuleProvider="target">
             <connections>
                 <outlet property="blessCheckBox" destination="NdZ-QZ-vDp" id="b2U-6Z-DGU"/>
                 <outlet property="componentDropdown" destination="5pk-Ih-XOU" id="jgh-YV-wwY"/>

@@ -27,7 +27,7 @@ class PackageComponentViewController: NSViewController {
         
     }
     
-    @IBAction func okButtonClicked(sender: AnyObject) {
+    override func viewDidDisappear() {
         component!.URL = packageURLField.stringValue
         if firstBootCheckbox.state == 0 {
             component!.firstBoot = false
@@ -35,6 +35,10 @@ class PackageComponentViewController: NSViewController {
             component!.firstBoot = true
         }
         component!.notifyUpdateTable()
+    }
+    
+    @IBAction func okButtonClicked(sender: AnyObject) {
+        component!.closeComponentPanel()
     }
     
 }
