@@ -91,7 +91,7 @@ class MainViewController: NSViewController, NSWindowDelegate {
     }
     
     func openPanelDidClose(response: NSModalResponse) {
-        if response != 0 {
+        if response == 1 {
             selectedConfigPath = openPanel.URL!.path!
             NSLog("User selected path \(selectedConfigPath)")
             
@@ -104,9 +104,7 @@ class MainViewController: NSViewController, NSWindowDelegate {
                 displayValidateView(selectedConfigPath)
             }
             ImagrConfigManager.sharedManager.loadConfig(selectedConfigPath)
-            updateView(self)
-        } else {
-            mainWindow.contentView = welcomeView
+            setupView()
         }
     }
     
@@ -135,6 +133,31 @@ class MainViewController: NSViewController, NSWindowDelegate {
             updateView(self)
         }
     }
+    
+    func setupView() {
+        if ImagrConfigManager.sharedManager.hasLoaded == false {
+            NSLog("Unable to load config view. ImagrConfigManager.sharedManager has not been initialized")
+            return
+        }
+        
+        if ImagrConfigManager.sharedManager.password == nil {
+            passwordField.placeholderString = nil
+            passwordField.enabled = true
+            changePasswordButton.hidden = true
+        } else {
+            passwordField.placeholderString = "Hashed password is already set"
+            passwordField.enabled = false
+            changePasswordButton.hidden = false
+        }
+        
+        let bgImage = ImagrConfigManager.sharedManager.backgroundImage
+        if bgImage != nil {
+            backgroundImageField.stringValue = bgImage!
+        } else {
+            backgroundImageField.stringValue = ""
+        }
+        updateView(nil)
+    }
 
     func updateView(sender: AnyObject?) {
         NSLog("Updating config view")
@@ -143,23 +166,7 @@ class MainViewController: NSViewController, NSWindowDelegate {
             return
         }
 
-        let imagrPassword = ImagrConfigManager.sharedManager.password
-        if imagrPassword != nil {
-            passwordField.placeholderString = "Hashed password is already set"
-            passwordField.enabled = false
-            changePasswordButton.hidden = false
-        } else {
-            passwordField.placeholderString = nil
-            passwordField.enabled = true
-            changePasswordButton.hidden = true
-        }
-
         let workflowTitles = ImagrConfigManager.sharedManager.workflowTitles()
-
-        let bgImage = ImagrConfigManager.sharedManager.backgroundImage
-        if backgroundImageField.stringValue == "" && bgImage != nil {
-            backgroundImageField.stringValue = bgImage!
-        }
 
         let autorunWorkflow = ImagrConfigManager.sharedManager.autorunWorkflow
         let selectedAutorun = autorunDropdown.selectedItem
@@ -225,6 +232,7 @@ class MainViewController: NSViewController, NSWindowDelegate {
             ImagrConfigManager.sharedManager.password = passwordField.stringValue.sha512()
             passwordField.enabled = false
             changePasswordButton.enabled = true
+            changePasswordButton.hidden = false
             passwordField.stringValue = ""
             NSLog("Password was updated")
         }
