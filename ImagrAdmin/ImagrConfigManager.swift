@@ -20,13 +20,26 @@ public class ImagrConfigManager {
     var autorunWorkflow: String?
     private var configData: NSMutableDictionary! = NSMutableDictionary()
     var hasLoaded: Bool = false
+    
+    private func clearConfig() {
+        imagrConfigPath = nil
+        password = nil
+        workflows = []
+        defaultWorkflow = nil
+        backgroundImage = nil
+        autorunWorkflow = nil
+        configData = NSMutableDictionary()
+        hasLoaded = false
+    }
 
     public func loadConfig() {
+        clearConfig()
         NSLog("Initialized new ImagrConfigManager.sharedManager")
         hasLoaded = true
     }
     
     public func loadConfig(path: String!) {
+        clearConfig()
         NSLog("Initialized ImagrConfigManager.sharedManager with \(path)")
         imagrConfigPath = path
         
