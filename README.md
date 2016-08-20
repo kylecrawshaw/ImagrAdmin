@@ -30,3 +30,7 @@ creating great scripts and packages to be installed with Imagr.
 ## Todo
 - [ ] Add support for HTTP headers for package components
 - [ ] Add partition component
+
+## Credits
+- [@clburlison](https://github.com/clburlison): Created the ImagrAdmin icon
+- [@grahamgilbert](https://github.com/grahamgilbert): Created [Imagr](https://github.com/grahamgilbert/imagr)
